@@ -1,5 +1,7 @@
 ![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)
 
+// keep appearing "/" before $gt or $lt because of prettier
+
 # Answers
 
 ### 1. All the companies whose name match 'Babelgum'. Retrieve only their `name` field.
@@ -25,11 +27,11 @@
 ### 5. All the companies that have less than 1000 employees and have been founded before 2005. Order them by the number of employees and limit the search to 10 companies.
 
 {"number_of_employees":{$lt:1000}, "founded_year":{$lt:2005}};
-{"sort":{"number_of_employees": 1}, limit":10}
+{"sort":{"number_of_employees": 1}, limit":10};
 
 ### 6. All the companies that don't include the `partners` field.
 
-{"partners": {\$exists: false}}
+{"partners": {\$exists: false}};
 
 ### 7. All the companies that have a null type of value on the `category_code` field.
 
@@ -37,7 +39,7 @@
 
 ### 8. All the companies that have at least 100 employees but less than 1000. Retrieve only the `name` and `number of employees` fields.
 
-{$and: [{"number_of_employees":{$gte:100}}, {"number_of_employees": {\$lt: 1000}}]}
+{$and: [{"number_of_employees":{$gte:100}}, {"number_of_employees": {\$lt: 1000}}]};
 {"project": {"name": 1, "number_of_employees":1}}
 
 ### 9. Order all the companies by their IPO price in a descending order.
